@@ -25,12 +25,20 @@ class Cadastro extends StatelessWidget {
             ),
             Botao(
               text: 'Cadastrar Usuário',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/cadastroUsuario');
+              },
             ),
+
+            const SizedBox(height: 10),
+
             Botao(
               text: 'Cadastrar Alimentos',
               onPressed: () {},
             ),
+
+            const SizedBox(height: 10),
+
             Botao(
               text: 'Cadastrar Cardápio',
               onPressed: () {},

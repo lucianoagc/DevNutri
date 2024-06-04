@@ -1,24 +1,24 @@
-import 'package:devnutri/views/cadastroUsuario.dart';
-import 'package:devnutri/views/cadastros.dart';
-import 'package:devnutri/views/consulta.dart';
-import 'package:devnutri/views/creditos.dart';
-import 'package:devnutri/views/login.dart';
+//import 'views/cadastros.dart';
+import 'package:devnutri/views/home.dart';
 import 'package:flutter/material.dart';
-import 'utils/icones.dart';
+import 'routes/rotas.dart';
+//import 'views/login.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp(const DevNutri());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class DevNutri extends StatelessWidget {
+  const DevNutri({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Consulta(),
+      home: const Principal(),
+      routes: Rotas.carregar(),
     );
   }
 }

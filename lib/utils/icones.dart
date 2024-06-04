@@ -22,30 +22,51 @@ class Icones extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+
+            // Icone Home
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.home, size: tamanhoIcone),
+              onPressed: () {
+                Navigator.pushNamed(context, '/principal');
+              },
+              icon: Icon(
+                Icons.home, size: tamanhoIcone),
               color: corIcone,
             ),
+
+            // Icone Home
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.login, size: tamanhoIcone),
+              icon: Icon(Icons.add_reaction_rounded, size: tamanhoIcone),
               color: corIcone,
             ),
+
+            // Icone Pesquisa
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                 Navigator.pushNamed(context, '/consulta');
+              },
               icon: Icon(Icons.search, size: tamanhoIcone),
               color: corIcone,
             ),
+
+            // Icone Compartilhar
             IconButton(
               onPressed: () {},
               icon: Icon(Icons.share, size: tamanhoIcone),
               color: corIcone,
             ),
+
+            // Icone Sair
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.settings, size: tamanhoIcone),
-              color: corIcone,
+              onPressed: () {
+                 Navigator.pushNamed(context, '/login');
+              },
+              icon: const Icon(
+                Icons.logout,
+                 size: 30,
+                ),
+              color: Colors.red,
+              
             ),
           ],
         ),

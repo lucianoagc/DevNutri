@@ -1,6 +1,7 @@
 import 'package:devnutri/common/cores.dart';
 import 'package:devnutri/utils/barra.dart';
 import 'package:flutter/material.dart';
+
 import '../utils/botao.dart';
 
 import '../utils/campoTexto.dart';
@@ -29,22 +30,21 @@ class CadastroUsuario extends StatelessWidget {
                 onPressed: () {},
                 color: MinhasCores.azul,
                 iconSize: 190,
-                icon: const Icon(Icons.circle),
+                icon: const Icon(Icons.account_circle),
               ),
-              SizedBox(
-                height: 100,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    BotaoPequeno(text: "Enviar foto", onPressed: () {}),
-                    BotaoPequeno(text: "Tirar Foto", onPressed: () {})
-                  ],
-                ),
+              const SizedBox(
+                height: 20, 
               ),
 
+              Botao(
+                text: 'Anexar Foto',
+                tamanho: const Size(250, 40),
+                 onPressed: (){}
+                ),
+
               const SizedBox(
-                  height:
-                      20), // Adiciona espaço entre a imagem e o campo de texto
+                  height: 60
+              ), // Adiciona espaço entre a imagem e o campo de texto
 
               const CampoTexto(
                 texto: 'Nome',
@@ -71,7 +71,9 @@ class CadastroUsuario extends StatelessWidget {
 
               Botao(
                 text: 'Cadastrar',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/principal');
+                },
                 backgroundColor: MinhasCores.preto,
                 textColor: MinhasCores.rosa,
                 tamanhoTexto: 24,

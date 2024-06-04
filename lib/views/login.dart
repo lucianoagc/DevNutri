@@ -58,7 +58,9 @@ class Login extends StatelessWidget {
               const SizedBox(height: 40),
               BotaoPequeno(
                 text: 'Cadastrar',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/cadastroUsuario');
+                },
                 tamanho: const Size(380, 50),
                 backgroundColor: MinhasCores.preto,
                 textColor: MinhasCores.rosa,
