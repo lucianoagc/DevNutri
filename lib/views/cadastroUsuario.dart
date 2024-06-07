@@ -1,6 +1,8 @@
 import 'package:devnutri/common/cores.dart';
 import 'package:devnutri/utils/barra.dart';
 import 'package:flutter/material.dart';
+import '../routes/rotas.dart';
+
 import '../utils/botao.dart';
 
 import '../utils/campoTexto.dart';
@@ -28,38 +30,47 @@ class CadastroUsuario extends StatelessWidget {
               IconButton(
                 onPressed: () {},
                 color: MinhasCores.azul,
-                iconSize: 190,
-                icon: const Icon(Icons.circle),
+                iconSize: 200,
+                icon: const Icon(Icons.account_circle),
               ),
-              SizedBox(
-                height: 100,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    BotaoPequeno(text: "Enviar foto", onPressed: () {}),
-                    BotaoPequeno(text: "Tirar Foto", onPressed: () {})
-                  ],
-                ),
+              const SizedBox(
+                height: 5,
               ),
+
+              Botao(
+                  text: 'Escolher Avatar',
+                  tamanho: const Size(250, 40),
+                  onPressed: () {
+                    Rotas.pushNamed(context, '/avatar');
+                  }),
 
               const SizedBox(
                   height:
-                      20), // Adiciona espaço entre a imagem e o campo de texto
+                      40), // Adiciona espaço entre a imagem e o campo de texto
 
               const CampoTexto(
                 texto: 'Nome',
+                mensagem: 'Digite seu nome',
+              ),
+
+              const SizedBox(height: 10),
+
+              const CampoTexto(
+                texto: 'Email',
+                mensagem: 'Digite seu Email',
               ),
 
               const SizedBox(
-                  height: 20), // Adiciona espaço entre os campos de texto
+                  height: 10), // Adiciona espaço entre os campos de texto
 
               const CampoTexto(
                 texto: 'Senha',
+                mensagem: 'Digite sua senha',
               ),
 
               const SizedBox(
                   height:
-                      20), // Adiciona espaço entre o campo de texto e o botão
+                      10), // Adiciona espaço entre o campo de texto e o botão
 
               const CampoTexto(
                 texto: 'Data de nascimento',
@@ -67,11 +78,13 @@ class CadastroUsuario extends StatelessWidget {
 
               const SizedBox(
                   height:
-                      20), // Adiciona espaço entre o campo de texto e o botão
+                      10), // Adiciona espaço entre o campo de texto e o botão
 
               Botao(
                 text: 'Cadastrar',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/principal');
+                },
                 backgroundColor: MinhasCores.preto,
                 textColor: MinhasCores.rosa,
                 tamanhoTexto: 24,

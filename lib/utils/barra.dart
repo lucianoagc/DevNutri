@@ -10,7 +10,7 @@ class Barra extends StatelessWidget implements PreferredSizeWidget {
   const Barra({
     required this.text,
     this.backgroundColor = MinhasCores.preto,
-    this.textcolor = MinhasCores.rosa,
+    this.textcolor = MinhasCores.azul,
     this.tamanho = 24,
   });
 

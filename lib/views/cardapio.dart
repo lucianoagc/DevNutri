@@ -6,8 +6,8 @@ import '../utils/barra.dart';
 
 
 
-class Consulta extends StatelessWidget {
-  const Consulta({Key? key}) : super(key: key);
+class Cardapio extends StatelessWidget {
+  const Cardapio({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

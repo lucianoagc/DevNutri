@@ -8,7 +8,7 @@ class Icones extends StatelessWidget {
 
   const Icones({
     this.tamanhoIcone = 26,
-    this.tamanhoCaixa = 60,
+    this.tamanhoCaixa = 64,
     this.corIcone = MinhasCores.branco,
   });
 
@@ -22,30 +22,55 @@ class Icones extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+
+            // Icone Home
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.home, size: tamanhoIcone),
+              onPressed: () {
+                Navigator.pushNamed(context, '/principal');
+              },
+              icon: Icon(
+                Icons.home, size: tamanhoIcone),
               color: corIcone,
             ),
+
+            // Icone Pesquisa
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.login, size: tamanhoIcone),
-              color: corIcone,
-            ),
-            IconButton(
-              onPressed: () {},
+              onPressed: () {
+                 Navigator.pushNamed(context, '/consulta');
+              },
               icon: Icon(Icons.search, size: tamanhoIcone),
               color: corIcone,
             ),
+
+             // Icone Home
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/cadastro');
+              },
+              icon: const Icon(Icons.add_circle_sharp, size: 38),
+              color: MinhasCores.azul,
+            ),
+
+            // Icone Compartilhar
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/compartilhar');
+              },
               icon: Icon(Icons.share, size: tamanhoIcone),
               color: corIcone,
             ),
+
+            // Icone Sair
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.settings, size: tamanhoIcone),
-              color: corIcone,
+              onPressed: () {
+                 Navigator.pushNamed(context, '/login');
+              },
+              icon: const Icon(
+                Icons.logout,
+                 size: 30,
+                ),
+              color: Colors.red,
+              
             ),
           ],
         ),
