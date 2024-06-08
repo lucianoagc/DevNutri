@@ -1,4 +1,5 @@
 import 'package:devnutri/common/cores.dart';
+import 'package:devnutri/routes/rotas.dart';
 import 'package:devnutri/utils/icones.dart';
 import 'package:flutter/material.dart';
 import '../utils/botao.dart';
@@ -26,22 +27,16 @@ class Cadastro extends StatelessWidget {
             Botao(
               text: 'Cadastrar Usuário',
               onPressed: () {
-                Navigator.pushNamed(context, '/cadastroUsuario');
+                Rotas.pushNamed(context, '/cadastroUsuario');
               },
             ),
-
             const SizedBox(height: 10),
-
-            Botao(
-              text: 'Cadastrar Alimentos',
-              onPressed: () {},
-            ),
-
             const SizedBox(height: 10),
-
             Botao(
               text: 'Cadastrar Cardápio',
-              onPressed: () {},
+              onPressed: () {
+                Rotas.pushNamed(context, '/principal');
+              },
             ),
           ],
         ),

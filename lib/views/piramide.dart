@@ -1,8 +1,7 @@
 import 'package:devnutri/common/cores.dart';
 import 'package:devnutri/utils/icones.dart';
 import 'package:flutter/material.dart';
-import '../utils/botao.dart';
-import '../utils/barra.dart';
+
 
 class Piramide extends StatelessWidget {
   const Piramide({Key? key}) : super(key: key);

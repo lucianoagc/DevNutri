@@ -1,10 +1,6 @@
-//import 'views/cadastros.dart';
-import 'package:devnutri/views/avatares.dart';
 import 'package:devnutri/views/login.dart';
-import 'package:devnutri/views/piramide.dart';
 import 'package:flutter/material.dart';
 import 'routes/rotas.dart';
-//import 'views/login.dart';
 
 void main() {
   runApp(const DevNutri());

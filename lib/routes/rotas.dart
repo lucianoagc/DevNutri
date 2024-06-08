@@ -1,7 +1,6 @@
-import 'package:devnutri/views/avatares.dart';
 import 'package:devnutri/views/consulta.dart';
+import 'package:devnutri/views/creditos.dart';
 import 'package:flutter/material.dart';
-
 import '../views/cadastroUsuario.dart';
 import '../views/cadastros.dart';
 import '../views/login.dart';
@@ -20,7 +19,7 @@ class Rotas {
       '/consulta': (context) => const Consulta(),
       '/compartilhar': (context) => const Compartilhar(),
       '/cardapio': (context) => const Cardapio(),
-      '/avatar': (context) => const Avatar(),
+      '/creditos': (context) => const Creditos(),
     };
   }
 
