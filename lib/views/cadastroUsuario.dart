@@ -5,7 +5,7 @@ import 'package:devnutri/utils/barra.dart';
 import '../routes/rotas.dart';
 import '../utils/botao.dart';
 import '../utils/campoTexto.dart';
-import '../database_helper.dart';
+import '../utils/auth_helper.dart';
 import '../models/user.dart';
 
 class CadastroUsuario extends StatefulWidget {
@@ -33,7 +33,8 @@ class _CadastroUsuarioState extends State<CadastroUsuario> {
         birthdate: _birthdateController.text,
         photo: _selectedPhoto,
       );
-      await DatabaseHelper().insert('user', user.toMap());
+      AuthHelper auth = AuthHelper();
+      await auth.register(user);
       Navigator.pop(context);
     }
   }

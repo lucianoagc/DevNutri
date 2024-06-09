@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart';
+import '../models/user.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
@@ -25,7 +26,10 @@ class DatabaseHelper {
   }
 
   _onCreate(Database db, int version) async {
-    await db.execute('''
+    await db.execute(_user);
+  }
+
+  String get _user => '''
     CREATE TABLE user (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,
@@ -34,8 +38,7 @@ class DatabaseHelper {
       birthdate TEXT NOT NULL,
       photo TEXT
     )
-    ''');
-  }
+    ''';
 
   Future<int> insert(String table, Map<String, dynamic> values) async {
     Database db = await database;
@@ -55,5 +58,20 @@ class DatabaseHelper {
   Future<int> delete(String table, String where, List<dynamic> whereArgs) async {
     Database db = await database;
     return await db.delete(table, where: where, whereArgs: whereArgs);
+  }
+
+  Future<User?> getUserByEmailAndPassword(String email, String password) async {
+    Database db = await database;
+    List<Map<String, dynamic>> result = await db.query('user', where: 'email =? AND password =?', whereArgs: [email, password]);
+    if (result.isNotEmpty) {
+      return User.fromMap(result.first);
+    } else {
+      return null;
+    }
+  }
+
+  Future<int> createUser(User user) async {
+    Database db = await database;
+    return await db.insert('user', user.toMap());
   }
 }

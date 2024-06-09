@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:devnutri/common/cores.dart';
 import '../utils/botao.dart';
 import '../utils/campoTexto.dart';
-import '../database_helper.dart';
+import '../utils/auth_helper.dart';
+import '../models/user.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -11,23 +12,23 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     final _nameController = TextEditingController();
     final _passwordController = TextEditingController();
-
+    final _emailController = TextEditingController();
+   
     Future<void> _login() async {
-      String name = _nameController.text;
+      String email = _emailController.text;
       String password = _passwordController.text;
 
-      if (name.isEmpty || password.isEmpty) {
+      if (email.isEmpty || password.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Por favor, preencha todos os campos')),
         );
         return;
       }
 
-      List<Map<String, dynamic>> users = await DatabaseHelper().queryAll('user');
-      bool userExists = users.any((user) =>
-          user['name'] == name && user['password'] == password);
+      AuthHelper auth = AuthHelper();
+      User? user = await auth.login(email, password);
 
-      if (userExists) {
+      if (user!= null) {
         Navigator.pushReplacementNamed(context, '/principal');
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -39,8 +40,7 @@ class Login extends StatelessWidget {
     return Scaffold(
       backgroundColor: MinhasCores.preto,
       body: Padding(
-        padding:
-            const EdgeInsets.all(20.0), // Adiciona padding em todos os lados
+        padding: const EdgeInsets.all(20.0), // Adiciona padding em todos os lados
         child: Center(
           child: ListView(
             // Estica os widgets horizontalmente
