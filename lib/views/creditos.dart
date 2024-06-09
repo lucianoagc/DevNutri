@@ -23,7 +23,7 @@ class Creditos extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Textos(
+              Texto2(
                 text: 'Desenvolvido por:',
                 cor: MinhasCores.branco,
                 tamanho: 26,
@@ -32,31 +32,31 @@ class Creditos extends StatelessWidget {
                 color: MinhasCores.branco,
               ),
               SizedBox(height: 20), // Adiciona espaço entre o divisor e o texto
-              Textos(
+              Texto2(
                 text: 'Ayrton Felipe Santana Oliveira de Lima',
               ),
               SizedBox(height: 20), // Adiciona espaço entre o texto e o próximo divisor
-              Textos(
+              Texto2(
                 text: 'Guilherme Vinicius Matte',
               ),
               SizedBox(height: 20), // Adiciona espaço entre o texto e o próximo divisor
-              Textos(
+              Texto2(
                 text: 'Lorrana Cadorini de Moura do Prado',
               ),
               SizedBox(height: 20), // Adiciona espaço entre o texto e o próximo divisor
-              Textos(
+              Texto2(
                 text: 'Luciano Albertinho Gomes de Castro',
               ),
               SizedBox(height: 20), // Adiciona espaço entre o texto e o próximo divisor
-              Textos(
+              Texto2(
                 text: 'Márcio Ferre Pererira',
               ),
               SizedBox(height: 20), // Adiciona espaço entre o texto e o próximo divisor
-              Textos(
+              Texto2(
                 text: 'Marcos Vinicius da Silva Lopes',
               ),
               SizedBox(height: 20), // Adiciona espaço entre o texto e o próximo divisor
-              Textos(
+              Texto2(
                 text: 'Wilker Fernandes Faria',
               ),
             ],

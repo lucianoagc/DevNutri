@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:devnutri/common/cores.dart';
 import 'package:devnutri/utils/barra.dart';
-import '../routes/rotas.dart';
 import '../utils/botao.dart';
 import '../utils/campoTexto.dart';
 import '../database_helper.dart';

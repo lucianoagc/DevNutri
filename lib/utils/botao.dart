@@ -1,4 +1,4 @@
-import 'package:devnutri/common/cores.dart';
+import '../common/cores.dart';
 import 'package:flutter/material.dart';
 
 // Botao Grande ------------------------------------------
