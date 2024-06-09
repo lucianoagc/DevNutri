@@ -1,4 +1,4 @@
-import 'package:devnutri/common/cores.dart';
+import '../common/cores.dart';
 import 'package:flutter/material.dart';
 
 class CampoTexto extends StatelessWidget {
@@ -48,29 +48,3 @@ class CampoTexto extends StatelessWidget {
   }
 }
 
-class Texto extends StatelessWidget{
-  final String texto;
-  final double tamanho;
-  final Color cor;
-
-  const Texto({
-    Key? key,
-    this.texto = 'cardapio',
-    this.tamanho = 17,
-    this.cor = MinhasCores.branco,
-  }) : super(key: key);
-
-
-
-@override
-  Widget build(BuildContext context) {
-    return Text(
-      texto,
-      style: TextStyle(
-        fontSize: tamanho,
-        color: cor,
-    )
-    );
-  }
-
-}

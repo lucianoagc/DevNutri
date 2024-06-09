@@ -1,23 +1,21 @@
-import 'package:devnutri/views/consulta.dart';
-import 'package:devnutri/views/creditos.dart';
 import 'package:flutter/material.dart';
-import '../views/cadastroUsuario.dart';
-import '../views/cadastros.dart';
 import '../views/login.dart';
+import '../views/cadastroUsuario.dart';
 import '../views/home.dart';
-import '../views/compartilhar.dart';
+import '../views/consulta.dart';
+import '../views/perfil.dart';
 import '../views/cardapio.dart';
-//import '../views/consulta.dart';
+import '../views/creditos.dart';
+
 
 class Rotas {
   static Map<String, Widget Function(BuildContext)> carregar() {
     return {
       '/login': (context) => const Login(),
-      '/cadastro': (context) => const Cadastro(),
       '/cadastroUsuario': (context) => const CadastroUsuario(),
       '/principal': (context) => const Principal(),
       '/consulta': (context) => const Consulta(),
-      '/compartilhar': (context) => const Compartilhar(),
+      '/perfil': (context) => const Perfil(),
       '/cardapio': (context) => const Cardapio(),
       '/creditos': (context) => const Creditos(),
     };

@@ -1,4 +1,4 @@
-import 'package:devnutri/views/login.dart';
+import 'views/login.dart';
 import 'package:flutter/material.dart';
 import 'routes/rotas.dart';
 

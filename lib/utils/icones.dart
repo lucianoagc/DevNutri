@@ -1,6 +1,6 @@
-import 'package:devnutri/common/cores.dart';
+import '../common/cores.dart';
 import 'package:flutter/material.dart';
-import '../routes/rotas.dart';
+
 
 class Icones extends StatelessWidget {
   final double tamanhoIcone;
@@ -10,7 +10,7 @@ class Icones extends StatelessWidget {
   const Icones({
     Key? key,
     this.tamanhoIcone = 26,
-    this.tamanhoCaixa = 64,
+    this.tamanhoCaixa = 54,
     this.corIcone = MinhasCores.branco,
   });
 
@@ -18,20 +18,14 @@ class Icones extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: tamanhoCaixa,
-      child: BottomAppBar(
+      child: BottomAppBar( 
         color: MinhasCores.preto,
         elevation: 0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Icone Home
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/principal');
-              },
-              icon: Icon(Icons.home, size: tamanhoIcone),
-              color: corIcone,
-            ),
+           
 
             // Icone Pesquisa
             IconButton(
@@ -41,35 +35,37 @@ class Icones extends StatelessWidget {
               icon: Icon(Icons.search, size: tamanhoIcone),
               color: corIcone,
             ),
-
-            // Icone Home
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/cadastro');
-              },
-              icon: const Icon(Icons.add_circle_sharp, size: 38),
-              color: MinhasCores.azul,
-            ),
-
-            // Icone Home
-            IconButton(
-              onPressed: () {
-                Rotas.pushNamed(context, '/creditos');
-              },
-              icon: const Icon(
-                Icons.app_registration_sharp,
-              ),
-              color: corIcone,
-            ),
+         
 
             // Icone Compartilhar
             IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/compartilhar');
+                Navigator.pushNamed(context, '/perfil');
               },
-              icon: Icon(Icons.share, size: tamanhoIcone),
+              icon: Icon(Icons.person, size: tamanhoIcone),
               color: corIcone,
             ),
+
+              // Icone Home
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/principal');
+              },
+              icon: Icon(Icons.home, size: tamanhoIcone,),
+              color: MinhasCores.azul,
+            ),
+
+            
+            // Icone Code
+             IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/creditos');
+              },
+              icon: Icon(Icons.code, size: tamanhoIcone),
+              color: corIcone,
+            ),
+
+
 
             // Icone Sair
             IconButton(

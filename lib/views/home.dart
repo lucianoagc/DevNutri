@@ -1,20 +1,21 @@
 import 'package:devnutri/utils/barra.dart';
 import 'package:devnutri/utils/botao.dart';
-import 'package:devnutri/utils/campoTexto.dart';
 import 'package:devnutri/utils/texto.dart';
 import '../common/cores.dart';
 import 'package:flutter/material.dart';
-//import '../utils/botao.dart';
-//import '../routes/rotas.dart';
 import '../utils/icones.dart';
-//import '../utils/campoTexto.dart';
+
+
+
 
 class Principal extends StatefulWidget {
-  const Principal({super.key});
+
+  const Principal({Key? key}) : super(key: key);
 
   @override
   PrincipalState createState() => PrincipalState();
 }
+
 
 class PrincipalState extends State<Principal> {
   Color iconColor = Colors.grey;
@@ -56,7 +57,7 @@ class PrincipalState extends State<Principal> {
                           fontSize: 35,
                         ),
                       ),
-                      Text('Albertinho',
+                      Text('Usuário',
                           style: TextStyle(
                             color: MinhasCores.azul,
                             fontSize: 24,
@@ -95,10 +96,13 @@ class PrincipalState extends State<Principal> {
                 height: 300,
                 width: 200,
               ),
-              const Text(
-                'Descrição:',
-                style: TextStyle(color: MinhasCores.rosa, fontSize: 22),
-              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   Texto2(text: 'Descrição:'),
+                   Texto2(text: '400 Kcal')      
+                 ],
+               ),
               const Texto(
                 texto: '3 panquecas: 200g (300kcal | carboidratos)',
               ),
@@ -123,6 +127,8 @@ class PrincipalState extends State<Principal> {
                 height: 15,
               ),
 
+
+
               // Pão e ovo --------------------------------------------------------------------
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,18 +145,21 @@ class PrincipalState extends State<Principal> {
                 'assets/images/pao com ovo.png',
                 fit: BoxFit.contain,
               ),
-              const Text(
-                'Descrição:',
-                style: TextStyle(color: MinhasCores.rosa, fontSize: 22),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   Texto2(text: 'Descrição:'),
+                   Texto2(text: '260 Kcal')      
+                 ],
+               ),
+              const Texto(
+                texto: 'Pão Multigrãos: 50g (120 Kcal | fibras, carboidratos)',
               ),
               const Texto(
-                texto: 'Pão Multigrãos - 50g',
+                texto: '2 ovos cozidos: 60g (proteínas, gorduras saudáveis)',
               ),
               const Texto(
-                texto: '2 ovos cozidos com orégano - 60g',
-              ),
-              const Texto(
-                texto: 'Chá mate - 240ml',
+                texto: 'Chá mate - 240ml(antioxidantes)',
               ),
 
               const SizedBox(
@@ -181,18 +190,21 @@ class PrincipalState extends State<Principal> {
                 'assets/images/sucrilhos.png',
                 fit: BoxFit.contain,
               ),
-              const Text(
-                'Descrição:',
-                style: TextStyle(color: MinhasCores.rosa, fontSize: 22),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   Texto2(text: 'Descrição:'),
+                   Texto2(text: '500 Kcal')      
+                 ],
+               ),
+              const Texto(
+                texto: 'Sucrilhos de milho: 250g (300Kcal | carboidratos)',
               ),
               const Texto(
-                texto: 'Sucrilhos de milho - 250g',
+                texto: 'Leite: 200ml (120Kcal | cálcio, proteínas)',
               ),
               const Texto(
-                texto: 'Leite - 200ml',
-              ),
-              const Texto(
-                texto: 'Morangos a gosto',
+                texto: 'Morangos: 50g (15kcal | fibras, vitamina A)',
               ),
 
               const SizedBox(
@@ -223,18 +235,21 @@ class PrincipalState extends State<Principal> {
                 'assets/images/Waffles.png',
                 fit: BoxFit.contain,
               ),
-              const Text(
-                'Descrição:',
-                style: TextStyle(color: MinhasCores.rosa, fontSize: 22),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   Texto2(text: 'Descrição:'),
+                   Texto2(text: '676 Kcal')      
+                 ],
+               ),
+              const Texto(
+                texto: 'Waffles: 200g (400Kcal | gorduras, carboidratos)',
               ),
               const Texto(
-                texto: 'Waffles - 200g',
+                texto: 'Creme de avelã: 30ml (180Kcal | gorduras, carboidratos)',
               ),
               const Texto(
-                texto: 'Geleias - 50ml',
-              ),
-              const Texto(
-                texto: 'Mel a gosto',
+                texto: 'Mel: 40ml (96Kcal | açúcares)',
               ),
 
               const SizedBox(
@@ -253,7 +268,7 @@ class PrincipalState extends State<Principal> {
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Arroz e frango',
+                  Text('Frango ao molho curry',
                       style: TextStyle(
                         color: MinhasCores.azul,
                         fontSize: 28,
@@ -265,18 +280,21 @@ class PrincipalState extends State<Principal> {
                 'assets/images/strogonof.png',
                 fit: BoxFit.contain,
               ),
-              const Text(
-                'Descrição:',
-                style: TextStyle(color: MinhasCores.rosa, fontSize: 22),
+             const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   Texto2(text: 'Descrição:'),
+                   Texto2(text: '413 Kcal')      
+                 ],
+               ),
+              const Texto(
+                texto: 'Arroz: 150g (195Kcal | carboidartos)',
               ),
               const Texto(
-                texto: 'Arroz - 150g',
+                texto: 'Frango ao molho curry: 150g (200Kcal | proteínas)',
               ),
               const Texto(
-                texto: 'Frango ao molho curry - 150g',
-              ),
-              const Texto(
-                texto: 'Tomates frescos',
+                texto: 'Tomates frescos: 100g (18Kcal | vitamina C, antioxidates)',
               ),
 
               const SizedBox(
@@ -307,18 +325,21 @@ class PrincipalState extends State<Principal> {
                 'assets/images/filézão.png',
                 fit: BoxFit.contain,
               ),
-              const Text(
-                'Descrição:',
-                style: TextStyle(color: MinhasCores.rosa, fontSize: 22),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   Texto2(text: 'Descrição:'),
+                   Texto2(text: '413 Kcal')      
+                 ],
+               ),
+              const Texto(
+                texto: 'Arroz: 150g (195Kcal | carboidartos)',
               ),
               const Texto(
-                texto: 'Arroz - 100g',
+                texto: 'File mignon ao molho madeira: 150g (300Kcal | proteínas, ferro)',
               ),
               const Texto(
-                texto: 'File mignon ao molho madeira - 150g',
-              ),
-              const Texto(
-                texto: 'Champignon - 40g',
+                texto: 'Champignon: 40g (8Kcal | antioxidantes, proteínas, vitamina D)',
               ),
 
               const SizedBox(
@@ -349,116 +370,38 @@ class PrincipalState extends State<Principal> {
                 'assets/images/salada caeser.png',
                 fit: BoxFit.contain,
               ),
-              const Text(
-                'Descrição:',
-                style: TextStyle(color: MinhasCores.rosa, fontSize: 22),
-              ),
-              const Texto(
-                texto: '3 alfaces romana baby',
-              ),
-              const Texto(
-                texto: 'Lascas de parmesão - 30g',
-              ),
-              const Texto(
-                texto: '3 fatias de pão de forma sem casca',
-              ),
-              const Texto(
-                texto: 'Mini penne - 150g',
-              ),
-              const Texto(
-                texto: '2 fatias de presunto',
-              ),
-              const Texto(
-                texto: 'Frango picado - 200g',
-              ),
-
-              const SizedBox(
-                height: 30,
-              ),
-
-              const Divider(
-                color: MinhasCores.rosa,
-              ),
-
-              const SizedBox(
-                height: 15,
-              ),
-
-              // Opção 4 - Waffles ----------------------------------------------------------------------
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Waffles',
-                      style: TextStyle(
-                        color: MinhasCores.azul,
-                        fontSize: 28,
-                      )),
-                  Check()
-                ],
-              ),
-              Image.asset(
-                'assets/images/Waffles.png',
-                fit: BoxFit.contain,
-              ),
-              const Text(
-                'Descrição:',
-                style: TextStyle(color: MinhasCores.rosa, fontSize: 22),
+                 children: [
+                   Texto2(text: 'Descrição:'),
+                   Texto2(text: '720 Kcal')      
+                 ],
+               ),
+              const Texto(
+                texto: '3 alfaces romana baby (45Kcal)',
               ),
               const Texto(
-                texto: 'Waffles - 200g',
+                texto: 'Lascas de parmesão: 30g (120Kcal | cálcio, gorduras)',
               ),
               const Texto(
-                texto: 'Geleias - 50ml',
+                texto: '3 fatias de pão de forma sem casca (195Kcal | carboidatros)',
               ),
               const Texto(
-                texto: 'Mel a gosto',
+                texto: '2 fatias de presunto cru (60Kcal | proteínas, gorduras)',
+              ),
+              const Texto(
+                texto: 'Frango picado: 200g (300Kcal | proteínas)',
               ),
 
-              const SizedBox(
-                height: 30,
-              ),
-
-              const Divider(
-                color: MinhasCores.rosa,
-              ),
-
-              const SizedBox(
-                height: 15,
-              ),
-
-              // Opção 4 - Waffles ------------------------------------------------------------------------
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Waffles',
-                      style: TextStyle(
-                        color: MinhasCores.azul,
-                        fontSize: 28,
-                      )),
-                  Check()
-                ],
-              ),
-              Image.asset(
-                'assets/images/Waffles.png',
-                fit: BoxFit.contain,
-              ),
-              const Text(
-                'Descrição:',
-                style: TextStyle(color: MinhasCores.rosa, fontSize: 22),
-              ),
-              const Texto(
-                texto: 'Waffles - 200g',
-              ),
-              const Texto(
-                texto: 'Geleias - 50ml',
-              ),
-              const Texto(
-                texto: 'Mel a gosto',
-              ),
+              
+              
 
               // cadastrar
               const SizedBox(
-                height: 50,
+                height: 80,
+              ),
+              const Divider(
+                color: MinhasCores.rosa,
               ),
               Botao(
                 text: 'Cadastrar',
