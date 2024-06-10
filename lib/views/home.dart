@@ -1,9 +1,13 @@
+import 'package:devnutri/services/cardapio_service.dart';
 import 'package:devnutri/utils/barra.dart';
 import 'package:devnutri/utils/botao.dart';
 import 'package:devnutri/utils/texto.dart';
 import '../common/cores.dart';
 import 'package:flutter/material.dart';
 import '../utils/icones.dart';
+import '../models/cardapio.dart';
+import '../database_helper.dart';
+import '../services/cardapio_service.dart';
 
 
 
@@ -33,6 +37,8 @@ class PrincipalState extends State<Principal> {
     });
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +63,7 @@ class PrincipalState extends State<Principal> {
                           fontSize: 35,
                         ),
                       ),
-                      Text('Usuário',
+                      Text('',
                           style: TextStyle(
                             color: MinhasCores.azul,
                             fontSize: 24,
@@ -75,8 +81,18 @@ class PrincipalState extends State<Principal> {
               const Divider(
                 color: MinhasCores.rosa,
               ),
+              
               const SizedBox(
                 height: 15,
+              ),
+
+
+
+             ...cardapios.map((cardapio) => buildCardapioItem(cardapio)).toList(),
+
+
+              const SizedBox(
+                height: 80,
               ),
 
               // Panquecas Artesanais ---------------------------------------------------------
@@ -161,6 +177,7 @@ class PrincipalState extends State<Principal> {
               const Texto(
                 texto: 'Chá mate - 240ml(antioxidantes)',
               ),
+              
 
               const SizedBox(
                 height: 30,
@@ -280,6 +297,7 @@ class PrincipalState extends State<Principal> {
                 'assets/images/strogonof.png',
                 fit: BoxFit.contain,
               ),
+
              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
@@ -296,6 +314,8 @@ class PrincipalState extends State<Principal> {
               const Texto(
                 texto: 'Tomates frescos: 100g (18Kcal | vitamina C, antioxidates)',
               ),
+              
+
 
               const SizedBox(
                 height: 30,
@@ -392,9 +412,8 @@ class PrincipalState extends State<Principal> {
               const Texto(
                 texto: 'Frango picado: 200g (300Kcal | proteínas)',
               ),
-
               
-              
+                                        
 
               // cadastrar
               const SizedBox(
@@ -417,4 +436,51 @@ class PrincipalState extends State<Principal> {
       bottomNavigationBar: const Icones(),
     );
   }
+
+
+  Widget buildCardapioItem(CardapioModelo cardapio) {
+  return Column(
+    children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            cardapio.nome,
+            style: const TextStyle(
+              color: MinhasCores.azul,
+              fontSize: 26,
+            ),
+          ),
+          Check(),
+        ],
+      ),
+      Image.asset(
+        cardapio.foto,
+        fit: BoxFit.contain,
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Texto2(text: 'Descrição:'),
+          Texto2(text: cardapio.caloria),
+          
+        ],
+      ),
+      Texto(
+        texto: cardapio.descricao,
+      ),
+      const SizedBox(
+        height: 30,
+      ),
+      const Divider(
+        color: MinhasCores.rosa,
+      ),
+      const SizedBox(
+        height: 15,
+      ),
+    ],
+  );
+}
+
+
 }

@@ -4,7 +4,6 @@ import '../views/cadastroUsuario.dart';
 import '../views/home.dart';
 import '../views/consulta.dart';
 import '../views/perfil.dart';
-import '../views/cardapio.dart';
 import '../views/creditos.dart';
 
 
@@ -16,7 +15,6 @@ class Rotas {
       '/principal': (context) => const Principal(),
       '/consulta': (context) => const Consulta(),
       '/perfil': (context) => const Perfil(),
-      '/cardapio': (context) => const Cardapio(),
       '/creditos': (context) => const Creditos(),
     };
   }

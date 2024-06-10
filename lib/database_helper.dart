@@ -25,7 +25,7 @@ class DatabaseHelper {
   }
 
   _onCreate(Database db, int version) async {
-    await db.execute('''
+  await db.execute('''
     CREATE TABLE user (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,
@@ -34,8 +34,28 @@ class DatabaseHelper {
       birthdate TEXT NOT NULL,
       photo TEXT
     )
-    ''');
-  }
+  ''');
+
+  await db.execute('''
+    CREATE TABLE cardapio (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      descricao TEXT NOT NULL,
+      photo TEXT
+    )
+  ''');
+}
+
+
+Future<int> insertCardapio(Map<String, dynamic> values) async {
+    return await insert('cardapio', values);
+}
+
+Future<List<Map<String, dynamic>>> queryAllCardapio() async {
+    return await queryAll('cardapio');
+}
+
+
 
   Future<int> insert(String table, Map<String, dynamic> values) async {
     Database db = await database;

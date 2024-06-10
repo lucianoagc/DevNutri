@@ -1,10 +1,7 @@
 import 'package:devnutri/common/cores.dart';
-import 'package:devnutri/utils/campoTexto.dart';
 import 'package:devnutri/utils/icones.dart';
 import 'package:devnutri/utils/texto.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../utils/barra.dart';
 import '../models/user.dart';
 import '../services/user_service.dart';  // Importe o serviço de usuário
@@ -60,9 +57,9 @@ class _PerfilState extends State<Perfil> {
                               )
                             : Icon(Icons.person, size: 100, color: MinhasCores.branco),
                         Text(
-                          'Nome: ${_user!.name}',
+                          '${_user!.name}',
                           style: const TextStyle(
-                            fontSize: 20,
+                            fontSize: 22,
                             color: MinhasCores.branco,
                           ),
                         ),
@@ -81,12 +78,16 @@ class _PerfilState extends State<Perfil> {
   }
 
   int _calculateAge(String birthdate) {
-    DateTime birthDate = DateTime.parse(birthdate);
-    DateTime today = DateTime.now();
-    int age = today.year - birthDate.year;
-    if (today.month < birthDate.month || (today.month == birthDate.month && today.day < birthDate.day)) {
-      age--;
-    }
-    return age;
+  DateTime birthDate = DateTime.parse(birthdate);
+  DateTime today = DateTime.now();
+  
+  int age = today.year - birthDate.year;
+  
+  if (today.month < birthDate.month || (today.month == birthDate.month && today.day < birthDate.day)) {
+    age--;
   }
+  
+  return age;
+}
+
 }

@@ -5,6 +5,4 @@ class MinhasCores{
   static const Color rosa = Color(0xFFF25781);
   static const Color branco = Colors.white;
   static const Color preto = Colors.black;
-
-
 }
