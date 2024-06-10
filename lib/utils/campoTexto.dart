@@ -42,7 +42,7 @@ class CampoTexto extends StatelessWidget {
         labelStyle: const TextStyle(color: Colors.white54), // cor da info
         hintStyle: const TextStyle(color: Colors.white54), //cor da info focada
       ),
-      style: TextStyle(color: corTexto), // Cor do texto digitado
+      style: const TextStyle(color: MinhasCores.branco), // Cor do texto digitado
       textAlign: TextAlign.center,
     );
   }
