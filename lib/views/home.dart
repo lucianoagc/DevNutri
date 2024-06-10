@@ -121,9 +121,13 @@ class PrincipalState extends State<Principal> {
             cardapio.nome,
             style: const TextStyle(
               color: MinhasCores.azul,
-              fontSize: 26,
+              fontSize: 20,
             ),
           ),
+          IconButton(
+            icon: const Icon(Icons.share) , onPressed: (){
+
+          },),
           Check(),
         ],
       ),
